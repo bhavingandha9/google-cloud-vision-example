@@ -2,16 +2,16 @@ const vision = require('@google-cloud/vision');
 const client = new vision.ImageAnnotatorClient();
 
 client
-  .documentTextDetection('./public/c.jpeg')
+  .webDetection('./public/yudiz.jpeg')
   .then(results => {
-    console.log(JSON.stringify(results[0].textAnnotations, null, 2))
+    console.log(JSON.stringify(results[0], null, 2))
   })
   .catch(err => {
     console.error('ERROR:', err);
   });
 
 
-
+ 
   // documentTextDetection
   // faceDetection -> results[0].faceAnnotations
   // labelDetection -> results[0].labelAnnotations
